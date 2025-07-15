@@ -1,0 +1,48 @@
+@import 'modern-normalize/modern-normalize.css';
+
+:root {
+  font-family: 'Inter', sans-serif;
+  --black: #101828;
+  --describe: #475467;
+  --blue-shade: #6c717b;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --star: #ffc531;
+  --gray: #dadde1;
+  --categories: #f2f4f7;
+  --forms-fill: #f7f7f7;
+  --white: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}

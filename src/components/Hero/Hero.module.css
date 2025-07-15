@@ -1,0 +1,40 @@
+.titles {
+  padding: 260px 0px;
+  color: var(--white);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.titlesWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 0.66667;
+}
+
+.subTitle {
+  font-size: 24px;
+  line-height: 1.33333;
+}
+
+.link {
+  border-radius: 200px;
+  padding: 16px 48.5px;
+  max-width: 173px;
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.link:hover {
+  background-color: var(--button-hover);
+}
