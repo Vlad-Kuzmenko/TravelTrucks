@@ -1,0 +1,126 @@
+.wrapper {
+  border: 1px solid var(--gray);
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  height: 368px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.parameters {
+  width: 524px;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.name {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prices {
+  display: flex;
+  gap: 12px;
+}
+
+.parametersWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ratings {
+  display: flex;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.star {
+  display: flex;
+  gap: 4px;
+}
+
+.starWrap {
+  display: flex;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.heartIcon {
+  fill: var(--black);
+}
+
+.starIcon {
+  fill: var(--star);
+  stroke: var(--star);
+}
+/* 
+.mapIcon {
+  fill: var(--black);
+} */
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--describe);
+  max-width: 490px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link {
+  display: block;
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: var(--button);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.link:hover {
+  background-color: var(--button-hover);
+}

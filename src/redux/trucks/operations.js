@@ -8,7 +8,7 @@ export const fetchTrucks = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const response = await axios.get('/campers');
-      return response.data;
+      return response.data.items;
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);
     }

@@ -8,20 +8,22 @@ const buildLinkClass = ({ isActive }) => {
 
 const Header = () => {
   return (
-    <div className={s.wrapper}>
-      <NavLink to="/" aria-label="Go to homepage">
-        <p className={s.logo}>
-          Travel<span className={s.logoStyle}>Trucks</span>
-        </p>
-      </NavLink>
-      <nav className={s.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
+    <div className={s.container}>
+      <div className={s.wrapper}>
+        <NavLink to="/" aria-label="Go to homepage">
+          <p className={s.logo}>
+            Travel<span className={s.logoStyle}>Trucks</span>
+          </p>
         </NavLink>
-        <NavLink to="/campers" className={buildLinkClass}>
-          Catalog
-        </NavLink>
-      </nav>
+        <nav className={s.nav}>
+          <NavLink to="/" className={buildLinkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/catalog" className={buildLinkClass}>
+            Catalog
+          </NavLink>
+        </nav>
+      </div>
     </div>
   );
 };

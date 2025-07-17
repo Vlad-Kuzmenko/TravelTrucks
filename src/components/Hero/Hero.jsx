@@ -12,7 +12,7 @@ const Hero = () => {
           </p>
         </div>
         <nav>
-          <NavLink to="/campers" className={s.link}>
+          <NavLink to="/catalog" className={s.link}>
             View Now
           </NavLink>
         </nav>
