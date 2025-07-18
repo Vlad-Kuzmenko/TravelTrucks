@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import s from './TruckList.module.css';
-import { selectTrucks } from '../../redux/trucks/slice';
 import Truck from '../Truck/Truck';
+import { selectTrucks } from '../../redux/trucks/selectors';
 
 const TruckList = () => {
   const trucks = useSelector(selectTrucks);

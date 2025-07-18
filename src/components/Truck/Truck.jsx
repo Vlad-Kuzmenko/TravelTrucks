@@ -70,7 +70,7 @@ const Truck = ({ truck }) => {
             />
           </div>
           <nav>
-            <NavLink to="/catalog/:id" className={s.link}>
+            <NavLink to={`/catalog/${id}`} className={s.link}>
               Show more
             </NavLink>
           </nav>

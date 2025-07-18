@@ -25,7 +25,7 @@ const Categories = ({ transmission, kitchen, engine, AC, radio }) => {
       {kitchen && (
         <span className={s.items}>
           <svg className={s.kitchenIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-ph_shower"></use>
+            <use href="../../../public/sprite.svg#icon-cup-hot"></use>
           </svg>
           {kitchen && 'Kitchen'}
         </span>

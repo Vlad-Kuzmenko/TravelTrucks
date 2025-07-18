@@ -70,6 +70,7 @@
 
 .location {
   display: flex;
+  gap: 4px;
 }
 
 .map {
@@ -91,10 +92,10 @@
   fill: var(--star);
   stroke: var(--star);
 }
-/* 
+
 .mapIcon {
   fill: var(--black);
-} */
+}
 
 .description {
   font-weight: 400;

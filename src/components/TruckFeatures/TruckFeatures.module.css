@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.wrapper {
+  width: 631px;
+  padding: 44px 52px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  background: var(--forms-fill);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.subTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.divider {
+  background-color: var(--gray);
+  height: 1px;
+}
+
+.detailWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+}
