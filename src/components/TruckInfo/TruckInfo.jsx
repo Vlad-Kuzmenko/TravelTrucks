@@ -4,20 +4,8 @@ import { selectTruck } from '../../redux/trucks/selectors';
 
 const TruckInfo = () => {
   const truck = useSelector(selectTruck);
-  const {
-    AC,
-    engine,
-    gallery,
-    id,
-    description,
-    location,
-    name,
-    price,
-    rating,
-    transmission,
-    kitchen,
-    reviews,
-  } = truck;
+  const { gallery, id, description, location, name, price, rating, reviews } =
+    truck;
 
   return (
     <div className={s.container}>

@@ -5,27 +5,7 @@ import s from './TruckReviews.module.css';
 
 const TruckReviews = () => {
   const truck = useSelector(selectTruck);
-  const {
-    AC,
-    engine,
-    gallery,
-    id,
-    description,
-    location,
-    name,
-    price,
-    rating,
-    transmission,
-    kitchen,
-    reviews,
-    radio,
-    form,
-    length,
-    width,
-    height,
-    tank,
-    consumption,
-  } = truck;
+  const { reviews } = truck;
 
   return (
     <div className={s.container}>

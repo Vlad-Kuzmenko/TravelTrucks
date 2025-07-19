@@ -27,8 +27,6 @@ const TruckFeatures = () => {
     water,
   } = truck;
 
-  console.log(truck);
-
   return (
     <div className={s.container}>
       <div className={s.wrapper}>

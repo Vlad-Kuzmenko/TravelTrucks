@@ -20,11 +20,10 @@ navigate to the root directory, and excitedly exclaim, "I'm ready to travel the
 world with my trucks!" 🎉
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Vlad-Kuzmenko/TravelTrucks.git
    ```
-
-````
 
 2. Navigate to the project directory:
 
@@ -32,22 +31,16 @@ world with my trucks!" 🎉
    cd TravelTrucks
    ```
 
-````
-
 3. Install dependencies:
 
    ```bash
    npm install
    ```
 
-````
 4. Run the project locally:
-
    ```bash
    npm run dev
    ```
-
-````
 
 This will start the development server, and you can access the project at
 `http://localhost:3000` in your browser. 🚀
