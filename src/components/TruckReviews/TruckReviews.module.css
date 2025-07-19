@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.wrapper {
+  width: 631px;
+  padding: 44px 52px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rating {
+  height: 60px;
+  display: flex;
+  gap: 16px;
+}
+
+.img {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--categories);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: var(--button);
+}
+
+.nameWrap {
+  padding: 8px 0;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--describe);
+}

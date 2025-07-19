@@ -88,6 +88,10 @@
   fill: var(--black);
 }
 
+.heartIcon.favorite {
+  fill: var(--button);
+}
+
 .starIcon {
   fill: var(--star);
   stroke: var(--star);

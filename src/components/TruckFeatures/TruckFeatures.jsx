@@ -9,16 +9,9 @@ const TruckFeatures = () => {
   const {
     AC,
     engine,
-    gallery,
     id,
-    description,
-    location,
-    name,
-    price,
-    rating,
     transmission,
     kitchen,
-    reviews,
     radio,
     form,
     length,
@@ -26,6 +19,12 @@ const TruckFeatures = () => {
     height,
     tank,
     consumption,
+    bathroom,
+    TV,
+    refrigerator,
+    microwave,
+    gas,
+    water,
   } = truck;
 
   console.log(truck);
@@ -35,10 +34,16 @@ const TruckFeatures = () => {
       <div className={s.wrapper}>
         <Categories
           transmission={transmission}
-          kitchen={kitchen}
           engine={engine}
           AC={AC}
           radio={radio}
+          kitchen={kitchen}
+          bathroom={bathroom}
+          TV={TV}
+          refrigerator={refrigerator}
+          microwave={microwave}
+          gas={gas}
+          water={water}
         />
         <div className={s.details}>
           <p className={s.subTitle}>Vehicle details</p>

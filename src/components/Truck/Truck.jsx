@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import s from './Truck.module.css';
 import Categories from '../Categories/Categories';
+import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 
 const Truck = ({ truck }) => {
   const {
@@ -18,6 +20,26 @@ const Truck = ({ truck }) => {
     reviews,
   } = truck;
 
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    setIsFavorite(favorites.includes(id));
+  }, [id]);
+
+  const toggleFavorite = () => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (favorites.includes(id)) {
+      const updatedFavorites = favorites.filter(favId => favId !== id);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+      setIsFavorite(false);
+    } else {
+      favorites.push(id);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      setIsFavorite(true);
+    }
+  };
+
   return (
     <div className={s.wrapper}>
       <div
@@ -29,8 +51,12 @@ const Truck = ({ truck }) => {
           <p className={s.name}>{name}</p>
           <div className={s.prices}>
             <p className={s.price}>€{price}.00</p>
-            <div className={s.heart}>
-              <svg className={s.heartIcon} width="26" height="24">
+            <div className={s.heart} onClick={toggleFavorite}>
+              <svg
+                className={clsx(s.heartIcon, { [s.favorite]: isFavorite })}
+                width="26"
+                height="24"
+              >
                 <use href="../../../public/sprite.svg#icon-heart"></use>
               </svg>
             </div>

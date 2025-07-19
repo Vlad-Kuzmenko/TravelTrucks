@@ -6,6 +6,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './CustomDatePicker.css';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookForm = () => {
   const BookingSchema = Yup.object().shape({
@@ -35,64 +37,73 @@ const BookForm = () => {
         validationSchema={BookingSchema}
         onSubmit={(values, { resetForm }) => {
           console.log('Booking submitted:', values);
+          toast.success('Your booking has been successfully submitted!');
           resetForm();
+          setSelectedDate(null);
         }}
       >
-        <Form className={s.form}>
-          <div>
-            <Field
-              className={s.field}
-              type="text"
-              name="name"
-              placeholder="Name*"
-              id={nanoid()}
-            />
-            <ErrorMessage className={s.error} name="name" component="span" />
-          </div>
+        {({ setFieldValue }) => (
+          <Form className={s.form}>
+            <div>
+              <Field
+                className={s.field}
+                type="text"
+                name="name"
+                placeholder="Name*"
+                id={nanoid()}
+              />
+              <ErrorMessage className={s.error} name="name" component="span" />
+            </div>
 
-          <div>
-            <Field
-              className={s.field}
-              type="email"
-              name="email"
-              placeholder="Email*"
-              id={nanoid()}
-            />
-            <ErrorMessage className={s.error} name="email" component="span" />
-          </div>
+            <div>
+              <Field
+                className={s.field}
+                type="email"
+                name="email"
+                placeholder="Email*"
+                id={nanoid()}
+              />
+              <ErrorMessage className={s.error} name="email" component="span" />
+            </div>
 
-          <div>
-            <DatePicker
-              className={s.field}
-              selected={selectedDate}
-              placeholderText="Booking date*"
-              onChange={date => {
-                setSelectedDate(date);
-                setFieldValue('date', date);
-              }}
-              dateFormat="yyyy-MM-dd"
-              name="date"
-            />
-            <ErrorMessage name="date" component="div" className={s.error} />
-          </div>
+            <div>
+              <DatePicker
+                className={s.field}
+                selected={selectedDate}
+                placeholderText="Booking date*"
+                onChange={date => {
+                  setSelectedDate(date);
+                  setFieldValue('date', date);
+                }}
+                dateFormat="yyyy-MM-dd"
+                name="date"
+              />
+              <ErrorMessage name="date" component="div" className={s.error} />
+            </div>
 
-          <div>
-            <Field
-              as="textarea"
-              className={s.field}
-              name="comment"
-              placeholder="Comment"
-              id={nanoid()}
-              rows="4"
-            />
-            <ErrorMessage className={s.error} name="comment" component="span" />
-          </div>
+            <div>
+              <Field
+                as="textarea"
+                className={s.field}
+                name="comment"
+                placeholder="Comment"
+                id={nanoid()}
+                rows="4"
+              />
+              <ErrorMessage
+                className={s.error}
+                name="comment"
+                component="span"
+              />
+            </div>
 
-          <button className={s.button} type="submit">
-            Send
-          </button>
-        </Form>
+            <button className={s.button} type="submit">
+              Send
+            </button>
+          </Form>
+        )}
       </Formik>
+      <ToastContainer />
     </div>
   );
 };

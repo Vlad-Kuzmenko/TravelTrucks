@@ -6,14 +6,14 @@ import { selectTrucks } from '../../redux/trucks/selectors';
 const TruckList = () => {
   const trucks = useSelector(selectTrucks);
 
-  console.log(trucks);
-
   return (
-    <div className={s.wrapper}>
-      {trucks.map(truck => (
-        <Truck key={truck.id} truck={truck} />
-      ))}
-    </div>
+    <>
+      <div className={s.wrapper}>
+        {trucks.map(truck => (
+          <Truck key={truck.id} truck={truck} />
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -56,3 +56,7 @@
 .textIcon {
   text-align: center;
 }
+
+.selected {
+  border-color: var(--button);
+}

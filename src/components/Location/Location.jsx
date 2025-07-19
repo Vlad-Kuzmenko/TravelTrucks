@@ -1,6 +1,6 @@
 import s from './Location.module.css';
 
-const Location = () => {
+const Location = ({ value, onChange }) => {
   return (
     <div className={s.wrapper}>
       <p className={s.title}>Location</p>
@@ -11,6 +11,8 @@ const Location = () => {
           type="text"
           autoComplete="off"
           placeholder="City"
+          value={value ?? ''}
+          onChange={e => onChange(e.target.value)}
         />
         <div className={s.map}>
           <svg className={s.mapIcon} width="20" height="20">
