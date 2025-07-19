@@ -22,44 +22,10 @@ const Categories = ({
 
   return (
     <div className={s.wrapper}>
-      {/* <span className={s.items}>
-        <svg className={s.transmissionIcon} width="16" height="16">
-          <use href="../../../public/sprite.svg#icon-diagram"></use>
-        </svg>
-        {capitalizeFirstLetter(transmission)}
-      </span>
-      <span className={s.items}>
-        <svg className={s.engineIcon} width="16" height="16">
-          <use href="../../../public/sprite.svg#icon-fuel-pump"></use>
-        </svg>
-        {capitalizeFirstLetter(engine)}
-      </span>
-      {kitchen && (
-        <span className={s.items}>
-          <svg className={s.kitchenIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-cup-hot"></use>
-          </svg>
-          {kitchen && 'Kitchen'}
-        </span>
-      )}
-      <span className={s.items}>
-        <svg className={s.acIcon} width="16" height="16">
-          <use href="../../../public/sprite.svg#icon-wind"></use>
-        </svg>
-        {AC && 'AC'}
-      </span>
-      {radio && (
-        <span className={s.items}>
-          <svg className={s.radioIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-ui-radios"></use>
-          </svg>
-          {radio && 'Radio'}
-        </span>
-      )} */}
       {transmission && (
         <span className={s.items}>
           <svg className={s.transmissionIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-diagram"></use>
+            <use href="../../../sprite.svg#icon-diagram"></use>
           </svg>
           {capitalizeFirstLetter(transmission)}
         </span>
@@ -68,7 +34,7 @@ const Categories = ({
       {engine && (
         <span className={s.items}>
           <svg className={s.engineIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-fuel-pump"></use>
+            <use href="../../../sprite.svg#icon-fuel-pump"></use>
           </svg>
           {capitalizeFirstLetter(engine)}
         </span>
@@ -77,7 +43,7 @@ const Categories = ({
       {kitchen && (
         <span className={s.items}>
           <svg className={s.kitchenIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-cup-hot"></use>
+            <use href="../../../sprite.svg#icon-cup-hot"></use>
           </svg>
           Kitchen
         </span>
@@ -86,7 +52,7 @@ const Categories = ({
       {AC && (
         <span className={s.items}>
           <svg className={s.acIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-wind"></use>
+            <use href="../../../sprite.svg#icon-wind"></use>
           </svg>
           AC
         </span>
@@ -95,7 +61,7 @@ const Categories = ({
       {radio && (
         <span className={s.items}>
           <svg className={s.radioIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-ui-radios"></use>
+            <use href="../../../sprite.svg#icon-ui-radios"></use>
           </svg>
           Radio
         </span>
@@ -104,7 +70,7 @@ const Categories = ({
       {bathroom && (
         <span className={s.items}>
           <svg className={s.bathroomIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-ph_shower"></use>
+            <use href="../../../sprite.svg#icon-ph_shower"></use>
           </svg>
           Bathroom
         </span>
@@ -113,7 +79,7 @@ const Categories = ({
       {TV && (
         <span className={s.items}>
           <svg className={s.tvIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-tv"></use>
+            <use href="../../../sprite.svg#icon-tv"></use>
           </svg>
           TV
         </span>
@@ -122,7 +88,7 @@ const Categories = ({
       {refrigerator && (
         <span className={s.items}>
           <svg className={s.refrigeratorIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-solar_fridge-outline"></use>
+            <use href="../../../sprite.svg#icon-solar_fridge-outline"></use>
           </svg>
           Refrigerator
         </span>
@@ -131,7 +97,7 @@ const Categories = ({
       {microwave && (
         <span className={s.items}>
           <svg className={s.microwaveIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-lucide_microwave"></use>
+            <use href="../../../sprite.svg#icon-lucide_microwave"></use>
           </svg>
           Microwave
         </span>
@@ -140,7 +106,7 @@ const Categories = ({
       {gas && (
         <span className={s.items}>
           <svg className={s.gasIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-hugeicons_gas-stove"></use>
+            <use href="../../../sprite.svg#icon-hugeicons_gas-stove"></use>
           </svg>
           Gas
         </span>
@@ -149,7 +115,7 @@ const Categories = ({
       {water && (
         <span className={s.items}>
           <svg className={s.waterIcon} width="16" height="16">
-            <use href="../../../public/sprite.svg#icon-ion_water-outline"></use>
+            <use href="../../../sprite.svg#icon-ion_water-outline"></use>
           </svg>
           Water
         </span>

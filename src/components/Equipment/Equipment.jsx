@@ -30,7 +30,7 @@ const Equipment = ({
             onClick={() => handleEquipmentToggle('AC')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-wind"></use>
+              <use href="../../../sprite.svg#icon-wind"></use>
             </svg>
             <p className={s.textIcon}>AC</p>
           </div>
@@ -41,7 +41,7 @@ const Equipment = ({
             onClick={() => handleEquipmentToggle('automatic')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-diagram"></use>
+              <use href="../../../sprite.svg#icon-diagram"></use>
             </svg>
             <p className={s.textIcon}>Automatic</p>
           </div>
@@ -52,7 +52,7 @@ const Equipment = ({
             onClick={() => handleEquipmentToggle('kitchen')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-cup-hot"></use>
+              <use href="../../../sprite.svg#icon-cup-hot"></use>
             </svg>
             <p className={s.textIcon}>Kitchen</p>
           </div>
@@ -61,7 +61,7 @@ const Equipment = ({
             onClick={() => handleEquipmentToggle('TV')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-tv"></use>
+              <use href="../../../sprite.svg#icon-tv"></use>
             </svg>
             <p className={s.textIcon}>TV</p>
           </div>
@@ -72,7 +72,7 @@ const Equipment = ({
             onClick={() => handleEquipmentToggle('bathroom')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-ph_shower"></use>
+              <use href="../../../sprite.svg#icon-ph_shower"></use>
             </svg>
             <p className={s.textIcon}>Bathroom</p>
           </div>
@@ -89,7 +89,7 @@ const Equipment = ({
             onClick={() => handleBodyTypeChange('panelTruck')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-bi_grid-1x2"></use>
+              <use href="../../../sprite.svg#icon-bi_grid-1x2"></use>
             </svg>
             <p className={s.textIcon}>Van</p>
           </div>
@@ -100,7 +100,7 @@ const Equipment = ({
             onClick={() => handleBodyTypeChange('fullyIntegrated')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-bi_grid"></use>
+              <use href="../../../sprite.svg#icon-bi_grid"></use>
             </svg>
             <p className={s.textIcon}>Fully Integrated</p>
           </div>
@@ -111,7 +111,7 @@ const Equipment = ({
             onClick={() => handleBodyTypeChange('alcove')}
           >
             <svg className={s.heartIcon} width="32" height="32">
-              <use href="../../../public/sprite.svg#icon-bi_grid-3x3-gap"></use>
+              <use href="../../../sprite.svg#icon-bi_grid-3x3-gap"></use>
             </svg>
             <p className={s.textIcon}>Alcove</p>
           </div>

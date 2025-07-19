@@ -17,7 +17,7 @@ const TruckInfo = () => {
           <div className={s.star}>
             <div className={s.starWrap}>
               <svg className={s.starIcon} width="16" height="16">
-                <use href="../../../public/sprite.svg#icon-star"></use>
+                <use href="../../../sprite.svg#icon-star"></use>
               </svg>
             </div>
 
@@ -28,7 +28,7 @@ const TruckInfo = () => {
           <div className={s.location}>
             <div className={s.map}>
               <svg className={s.mapIcon} width="16" height="16">
-                <use href="../../../public/sprite.svg#icon-map"></use>
+                <use href="../../../sprite.svg#icon-map"></use>
               </svg>
             </div>
             <div>{location}</div>

@@ -16,7 +16,7 @@ const Location = ({ value, onChange }) => {
         />
         <div className={s.map}>
           <svg className={s.mapIcon} width="20" height="20">
-            <use href="../../../public/sprite.svg#icon-map"></use>
+            <use href="../../../sprite.svg#icon-map"></use>
           </svg>
         </div>
       </form>

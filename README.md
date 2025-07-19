@@ -80,7 +80,3 @@ always available to guide you back on track.
 **Q: What if I encounter a bug?** A: Just rest assured that our vigilant
 debugging squad is on high alert, ready to mend any damage and get you back on
 course!
-
-```
-
-```
