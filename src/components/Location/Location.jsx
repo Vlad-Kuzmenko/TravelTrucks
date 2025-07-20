@@ -4,7 +4,7 @@ const Location = ({ value, onChange }) => {
   return (
     <div className={s.wrapper}>
       <p className={s.title}>Location</p>
-      <form className={s.form}>
+      <form className={s.form} onSubmit={e => e.preventDefault()}>
         <input
           className={s.input}
           name="search"
