@@ -16,6 +16,7 @@ export const fetchTrucks = createAsyncThunk(
       return {
         items: response.data.items,
         total: response.data.total,
+        page,
       };
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);

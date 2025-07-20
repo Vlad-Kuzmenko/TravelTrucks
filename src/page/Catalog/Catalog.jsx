@@ -16,8 +16,10 @@ import {
   selectSelectedEquipment,
   selectSelectedBodyType,
   selectLocation,
+  selectError,
 } from '../../redux/trucks/selectors';
 import { setPage } from '../../redux/trucks/slice';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -28,6 +30,7 @@ const Catalog = () => {
   const selectedBodyType = useSelector(selectSelectedBodyType);
   const selectedEquipment = useSelector(selectSelectedEquipment);
   const location = useSelector(selectLocation);
+  const error = useSelector(selectError);
 
   const [page, setPageState] = useState(pages);
   const [queryPage, setQueryPageState] = useState(pages);
@@ -78,6 +81,7 @@ const Catalog = () => {
           </div>
         </Container>
       </Section>
+      <ToastContainer />
     </div>
   );
 };

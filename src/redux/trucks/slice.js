@@ -1,5 +1,6 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { fetchQuery, fetchTruck, fetchTrucks } from './operations';
+import { toast } from 'react-toastify';
 
 const slice = createSlice({
   name: 'trucks',
@@ -36,10 +37,12 @@ const slice = createSlice({
       .addCase(fetchTrucks.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
+
         const newItems = action.payload.items.filter(
           newItem => !state.items.some(item => item.id === newItem.id)
         );
         state.items = [...state.items, ...newItems];
+
         state.total = action.payload.total;
       })
       .addCase(fetchTrucks.rejected, (state, action) => {
@@ -64,12 +67,6 @@ const slice = createSlice({
       .addCase(fetchQuery.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        // const newItems = action.payload.items.filter(
-        //   newItem => !state.items.some(item => item.id === newItem.id)
-        // );
-        // state.items = action.payload.replace
-        //   ? newItems
-        //   : [...state.items, ...newItems];
         state.items = action.payload.replace
           ? action.payload.items
           : [...state.items, ...action.payload.items];
@@ -78,6 +75,11 @@ const slice = createSlice({
       .addCase(fetchQuery.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+        if (typeof window !== 'undefined') {
+          toast.error(
+            'Unfortunately, we dont have trucks with such characteristics.'
+          );
+        }
       });
   },
 });
