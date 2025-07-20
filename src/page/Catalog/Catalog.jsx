@@ -18,7 +18,7 @@ import {
   selectLocation,
   selectError,
 } from '../../redux/trucks/selectors';
-import { setPage } from '../../redux/trucks/slice';
+import { setPage, setQueryPage } from '../../redux/trucks/slice';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Catalog = () => {
@@ -31,9 +31,8 @@ const Catalog = () => {
   const selectedEquipment = useSelector(selectSelectedEquipment);
   const location = useSelector(selectLocation);
   const error = useSelector(selectError);
-
-  const [page, setPageState] = useState(pages);
-  const [queryPage, setQueryPageState] = useState(pages);
+  const page = useSelector(selectPage);
+  const queryPage = useSelector(state => state.trucks.queryPage);
 
   useEffect(() => {
     const hasFilters =
@@ -45,18 +44,24 @@ const Catalog = () => {
   }, [dispatch, page, location, selectedBodyType, selectedEquipment]);
 
   const handleLoadMore = () => {
-    const queryParams = {
-      page: queryPage + 1,
-      location: location || undefined,
-      form: selectedBodyType || undefined,
-      equipment: selectedEquipment.length > 0 ? selectedEquipment : undefined,
-    };
+    const hasFilters =
+      !!location || !!selectedBodyType || selectedEquipment.length > 0;
 
-    if (location || selectedBodyType || selectedEquipment.length > 0) {
-      dispatch(fetchQuery(queryParams));
-      setQueryPageState(prev => prev + 1);
+    if (hasFilters) {
+      dispatch(
+        fetchQuery({
+          page: queryPage + 1,
+          location: location || undefined,
+          form: selectedBodyType || undefined,
+          equipment:
+            selectedEquipment.length > 0 ? selectedEquipment : undefined,
+          replace: false,
+        })
+      );
+      dispatch(setQueryPage(queryPage + 1));
     } else {
-      setPageState(prev => prev + 1);
+      dispatch(fetchTrucks(page + 1));
+      dispatch(setPage(page + 1));
     }
   };
 

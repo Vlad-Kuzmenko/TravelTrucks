@@ -3,7 +3,7 @@ import Equipment from '../Equipment/Equipment';
 import Location from '../Location/Location';
 import s from './Filters.module.css';
 import { useState } from 'react';
-import { fetchQuery } from '../../redux/trucks/operations';
+import { fetchQuery, fetchTrucks } from '../../redux/trucks/operations';
 import {
   selectLocation,
   selectPage,
@@ -15,6 +15,8 @@ import {
   setSelectedEquipment,
   setLocation,
   setPage,
+  resetFiltersAndItems,
+  setQueryPage,
 } from '../../redux/trucks/slice';
 
 const Filters = () => {
@@ -30,6 +32,7 @@ const Filters = () => {
 
   const handleSearch = () => {
     dispatch(setPage(1));
+    dispatch(setQueryPage(1));
 
     const filters = {
       page: 1,
@@ -55,6 +58,11 @@ const Filters = () => {
     dispatch(setSelectedBodyType(updated));
   };
 
+  const handleClear = () => {
+    dispatch(resetFiltersAndItems());
+    dispatch(fetchTrucks(1));
+  };
+
   return (
     <div className={s.wrapper}>
       <Location value={location} onChange={handleLocationChange} />
@@ -64,9 +72,14 @@ const Filters = () => {
         selectedBodyType={selectedBodyType}
         onBodyTypeChange={handleBodyTypeChange}
       />
-      <button className={s.link} onClick={handleSearch}>
-        Search
-      </button>
+      <div className={s.btn}>
+        <button className={s.link} onClick={handleSearch}>
+          Search
+        </button>
+        <button className={s.link} onClick={handleClear}>
+          Clear
+        </button>
+      </div>
     </div>
   );
 };

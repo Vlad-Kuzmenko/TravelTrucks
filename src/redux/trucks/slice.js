@@ -11,6 +11,7 @@ const slice = createSlice({
     error: null,
     total: 0,
     page: 1,
+    queryPage: 1,
     selectedBodyType: '',
     selectedEquipment: [],
     location: '',
@@ -27,6 +28,18 @@ const slice = createSlice({
     },
     setSelectedEquipment: (state, action) => {
       state.selectedEquipment = action.payload;
+    },
+    setQueryPage: (state, action) => {
+      state.queryPage = action.payload;
+    },
+    resetFiltersAndItems: state => {
+      state.items = [];
+      state.total = 0;
+      state.page = 1;
+      state.queryPage = 1;
+      state.selectedBodyType = '';
+      state.selectedEquipment = [];
+      state.location = '';
     },
   },
   extraReducers: builder => {
@@ -89,6 +102,8 @@ export const {
   setSelectedBodyType,
   setSelectedEquipment,
   setLocation,
+  resetFiltersAndItems,
+  setQueryPage,
 } = slice.actions;
 
 export default slice.reducer;

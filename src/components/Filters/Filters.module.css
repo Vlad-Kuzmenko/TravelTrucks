@@ -22,3 +22,8 @@
 .link:hover {
   background-color: var(--button-hover);
 }
+
+.btn {
+  display: flex;
+  gap: 20px;
+}
