@@ -14,7 +14,14 @@
   gap: 8px;
   border-radius: 100px;
   padding: 12px 18px;
-  max-width: 143px;
+  max-width: 150px;
   height: 48px;
   background: var(--categories);
+}
+
+.microwaveIcon,
+.gasIcon,
+.waterIcon {
+  fill: none;
+  stroke: var(--black);
 }

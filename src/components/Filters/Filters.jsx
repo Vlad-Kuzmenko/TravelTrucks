@@ -4,7 +4,12 @@ import Location from '../Location/Location';
 import s from './Filters.module.css';
 import { useState } from 'react';
 import { fetchQuery } from '../../redux/trucks/operations';
-import { selectPage } from '../../redux/trucks/selectors';
+import {
+  selectLocation,
+  selectPage,
+  selectSelectedBodyType,
+  selectSelectedEquipment,
+} from '../../redux/trucks/selectors';
 import {
   setSelectedBodyType,
   setSelectedEquipment,
@@ -15,12 +20,11 @@ import {
 const Filters = () => {
   const dispatch = useDispatch();
   const page = useSelector(selectPage);
-  const [location, setLocationState] = useState('');
-  const [selectedEquipment, setEquipment] = useState([]);
-  const [selectedBodyType, setBodyType] = useState('');
+  const location = useSelector(selectLocation);
+  const selectedEquipment = useSelector(selectSelectedEquipment);
+  const selectedBodyType = useSelector(selectSelectedBodyType);
 
   const handleLocationChange = value => {
-    setLocationState(value);
     dispatch(setLocation(value));
   };
 
@@ -39,21 +43,16 @@ const Filters = () => {
   };
 
   const handleEquipmentChange = newEquipment => {
-    setEquipment(prevState =>
-      prevState.includes(newEquipment)
-        ? prevState.filter(item => item !== newEquipment)
-        : [...prevState, newEquipment]
-    );
-    dispatch(setSelectedEquipment(selectedEquipment));
+    const updated = selectedEquipment.includes(newEquipment)
+      ? selectedEquipment.filter(item => item !== newEquipment)
+      : [...selectedEquipment, newEquipment];
+
+    dispatch(setSelectedEquipment(updated));
   };
 
   const handleBodyTypeChange = bodyType => {
-    if (selectedBodyType === bodyType) {
-      setBodyType(null);
-    } else {
-      setBodyType(bodyType);
-    }
-    dispatch(setSelectedBodyType(bodyType));
+    const updated = selectedBodyType === bodyType ? '' : bodyType;
+    dispatch(setSelectedBodyType(updated));
   };
 
   return (

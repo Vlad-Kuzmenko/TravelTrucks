@@ -43,7 +43,7 @@ const Catalog = () => {
 
   const handleLoadMore = () => {
     const queryParams = {
-      page: queryPage + 1, // додаємо нову сторінку
+      page: queryPage + 1,
       location: location || undefined,
       form: selectedBodyType || undefined,
       equipment: selectedEquipment.length > 0 ? selectedEquipment : undefined,
