@@ -6,6 +6,7 @@ import BookForm from '../BookForm/BookForm';
 
 const TruckFeatures = () => {
   const truck = useSelector(selectTruck);
+
   const {
     AC,
     engine,
@@ -27,9 +28,23 @@ const TruckFeatures = () => {
     water,
   } = truck;
 
+  function capitalizeFirstLetter(string) {
+    if (typeof string !== 'string' || string.length === 0) {
+      return string;
+    }
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  const addSpaceBeforeUnit = value => {
+    if (typeof value !== 'string') {
+      value = String(value);
+    }
+    return value.replace(/^([\d.]+)([a-zA-Z]+)$/, '$1 $2');
+  };
+
   return (
     <div className={s.container}>
-      <div className={s.wrapper}>
+      <div className={s.wrapp}>
         <Categories
           transmission={transmission}
           engine={engine}
@@ -42,6 +57,7 @@ const TruckFeatures = () => {
           microwave={microwave}
           gas={gas}
           water={water}
+          className={s.wrapper}
         />
         <div className={s.details}>
           <p className={s.subTitle}>Vehicle details</p>
@@ -49,27 +65,27 @@ const TruckFeatures = () => {
           <div className={s.detailWrap}>
             <div className={s.detail}>
               <p className={s.text}>Form</p>
-              <p className={s.text}>{form}</p>
+              <p className={s.text}>{capitalizeFirstLetter(form)}</p>
             </div>
             <div className={s.detail}>
               <p className={s.text}>Length</p>
-              <p className={s.text}>{length}</p>
+              <p className={s.text}>{addSpaceBeforeUnit(length)}</p>
             </div>
             <div className={s.detail}>
               <p className={s.text}>Width</p>
-              <p className={s.text}>{width}</p>
+              <p className={s.text}>{addSpaceBeforeUnit(width)}</p>
             </div>
             <div className={s.detail}>
               <p className={s.text}>Height</p>
-              <p className={s.text}>{height}</p>
+              <p className={s.text}>{addSpaceBeforeUnit(height)}</p>
             </div>
             <div className={s.detail}>
               <p className={s.text}>Tank</p>
-              <p className={s.text}>{tank}</p>
+              <p className={s.text}>{addSpaceBeforeUnit(tank)}</p>
             </div>
             <div className={s.detail}>
               <p className={s.text}>Consumption</p>
-              <p className={s.text}>{consumption}</p>
+              <p className={s.text}>{addSpaceBeforeUnit(consumption)}</p>
             </div>
           </div>
         </div>

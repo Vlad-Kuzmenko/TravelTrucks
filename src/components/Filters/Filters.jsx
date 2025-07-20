@@ -32,6 +32,7 @@ const Filters = () => {
       location: location || undefined,
       form: selectedBodyType || undefined,
       equipment: selectedEquipment.length > 0 ? selectedEquipment : undefined,
+      replace: true,
     };
 
     dispatch(fetchQuery(filters));

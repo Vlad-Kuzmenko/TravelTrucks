@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import s from './Categories.module.css';
 
 const Categories = ({
@@ -12,6 +13,7 @@ const Categories = ({
   microwave,
   gas,
   water,
+  className,
 }) => {
   function capitalizeFirstLetter(string) {
     if (typeof string !== 'string' || string.length === 0) {
@@ -21,7 +23,7 @@ const Categories = ({
   }
 
   return (
-    <div className={s.wrapper}>
+    <div className={clsx(s.wrapper, className)}>
       {transmission && (
         <span className={s.items}>
           <svg className={s.transmissionIcon} width="16" height="16">

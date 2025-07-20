@@ -5,6 +5,7 @@ import Catalog from '../../page/Catalog/Catalog';
 import CatalogDetails from '../../page/CatalogDetails/CatalogDetails';
 import TruckFeatures from '../TruckFeatures/TruckFeatures';
 import TruckReviews from '../TruckReviews/TruckReviews';
+import NotFound from '../../page/NotFound/NotFound';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="features" element={<TruckFeatures />} />
           <Route path="reviews" element={<TruckReviews />} />
         </Route>
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

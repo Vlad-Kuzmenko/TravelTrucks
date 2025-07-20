@@ -71,7 +71,7 @@
 .img {
   border-radius: 10px;
   overflow: hidden;
-  min-width: 292px;
+  width: 292px;
   height: 312px;
 }
 

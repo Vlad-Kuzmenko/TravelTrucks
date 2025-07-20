@@ -37,14 +37,24 @@ export const fetchTruck = createAsyncThunk(
 
 export const fetchQuery = createAsyncThunk(
   'trucks/fetchQuery',
-  async ({ page = 1, location = '', form = '', equipment = [] }, thunkApi) => {
+  async (
+    { page = 1, location = '', form = '', equipment = [], replace = false },
+    thunkApi
+  ) => {
     try {
       const params = {
         page,
         limit: 4,
         location,
         form,
-        ...equipment.reduce((acc, equip) => ({ ...acc, [equip]: true }), {}),
+        ...equipment.reduce((acc, equip) => {
+          if (equip === 'automatic') {
+            acc.transmission = 'automatic';
+          } else {
+            acc[equip] = true;
+          }
+          return acc;
+        }, {}),
       };
 
       const response = await axios.get('/campers', { params });
@@ -52,6 +62,7 @@ export const fetchQuery = createAsyncThunk(
       return {
         items: response.data.items,
         total: response.data.total,
+        replace,
       };
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);

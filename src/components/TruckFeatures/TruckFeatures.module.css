@@ -3,7 +3,7 @@
   gap: 40px;
 }
 
-.wrapper {
+.wrapp {
   width: 631px;
   padding: 44px 52px;
   border-radius: 10px;
@@ -11,6 +11,10 @@
   flex-direction: column;
   gap: 100px;
   background: var(--forms-fill);
+}
+
+.wrapper {
+  width: 100%;
 }
 
 .details {

@@ -33,9 +33,13 @@ const Catalog = () => {
   const [queryPage, setQueryPageState] = useState(pages);
 
   useEffect(() => {
-    dispatch(fetchTrucks(page));
-    dispatch(setPage(page));
-  }, [dispatch, page]);
+    const hasFilters =
+      !!location || !!selectedBodyType || selectedEquipment.length > 0;
+    if (!hasFilters) {
+      dispatch(fetchTrucks(page));
+      dispatch(setPage(page));
+    }
+  }, [dispatch, page, location, selectedBodyType, selectedEquipment]);
 
   const handleLoadMore = () => {
     const queryParams = {

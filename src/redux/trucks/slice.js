@@ -64,10 +64,15 @@ const slice = createSlice({
       .addCase(fetchQuery.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        const newItems = action.payload.items.filter(
-          newItem => !state.items.some(item => item.id === newItem.id)
-        );
-        state.items = [...state.items, ...newItems];
+        // const newItems = action.payload.items.filter(
+        //   newItem => !state.items.some(item => item.id === newItem.id)
+        // );
+        // state.items = action.payload.replace
+        //   ? newItems
+        //   : [...state.items, ...newItems];
+        state.items = action.payload.replace
+          ? action.payload.items
+          : [...state.items, ...action.payload.items];
         state.total = action.payload.total;
       })
       .addCase(fetchQuery.rejected, (state, action) => {
