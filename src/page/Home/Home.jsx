@@ -19,17 +19,18 @@ const Home = () => {
     <>
       <Header />
       {isLoading && <Loader />}
-      <Section className={s.section}>
-        <div className={s.heroBlock}>
-          <div
-            className={s.heroImage}
-            style={{ backgroundImage: `url(${bgImage})` }}
-          >
-            <Container>
-              <Hero />
-            </Container>
-          </div>
-        </div>
+      <Section
+        className={s.section}
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <Container>
+          <Hero />
+        </Container>
       </Section>
     </>
   );

@@ -1,17 +1,3 @@
 .section {
   padding: 0;
 }
-
-.heroBlock {
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.heroImage {
-  width: 100%;
-  height: 696px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
