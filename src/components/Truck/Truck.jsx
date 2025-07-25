@@ -41,7 +41,7 @@ const Truck = ({ truck }) => {
   };
 
   return (
-    <div className={s.wrapper}>
+    <li className={s.wrapper}>
       <div
         className={s.img}
         style={{ backgroundImage: `url(${gallery[0].thumb})` }}
@@ -102,7 +102,7 @@ const Truck = ({ truck }) => {
           </nav>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

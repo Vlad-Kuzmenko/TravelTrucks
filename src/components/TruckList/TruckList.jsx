@@ -8,11 +8,11 @@ const TruckList = () => {
 
   return (
     <>
-      <div className={s.wrapper}>
+      <ul className={s.wrapper}>
         {trucks.map(truck => (
           <Truck key={truck.id} truck={truck} />
         ))}
-      </div>
+      </ul>
     </>
   );
 };
